@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GLAM - Trove API</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-5">
+        Search Trove Database for a Book or a Map
+      </h1>
+
+      <form action="" class="main-form needs-validation" novalidate>
+        <fieldset class="form-group">
+          <legend>Search Query Details</legend>
+
+          <div class="form-group">
+            <label class="form-control-label sr-only" for="ownername"
+              >Search Query</label
+            >
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              id="search_query"
+              placeholder="Your Search Query"
+              required
+            />
+            <div class="invalid-feedback">Please enter query</div>
+          </div>
+          <!-- form-group -->
+        </fieldset>
+        <!-- fieldset -->
+
+        <fieldset>
+          <div class="form-group">
+            <label for="zone">Zone to search</label>
+            <select class="form-control" id="zone">
+              <option>--Select--</option>
+              <option value="book">Book</option>
+              <option value="map">Map</option>
+              <option value="picture">Picture</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Type of Search</legend>
+
+          <div class="form-group">
+            <label class="d-block">Are you serching for a book or a map?</label>
+
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  id="book"
+                  class="form-check-input"
+                  type="radio"
+                  name="search_type"
+                  value="book"
+                  checked
+                />
+                Book
+              </label>
+            </div>
+            <!-- form-check -->
+
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  id="map"
+                  class="form-check-input"
+                  type="radio"
+                  name="search_type"
+                  value="map"
+                />
+                Map
+              </label>
+            </div>
+            <!-- form-check -->
+          </div>
+          <!-- form-group -->
+        </fieldset>
+        <!-- fieldset -->
+
+        <button class="btn btn-primary" type="submit" id="submitBtn">
+          Submit
+        </button>
+      </form>
+    </div>
+    <!-- content container -->
+
+    <div id="result" class="row mt-5"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
