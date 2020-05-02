@@ -15,10 +15,15 @@
   <body>
     <div class="container">
       <h1 class="text-center mb-5">
-        Search Trove Database for a Book or a Map
+        Search Trove Database for a Book, Map or Newspaper
       </h1>
 
-      <form action="" class="main-form needs-validation" novalidate>
+      <form
+        action=""
+        class="main-form needs-validation"
+        id="trove_form"
+        novalidate
+      >
         <fieldset class="form-group">
           <legend>Search Query Details</legend>
 
@@ -43,52 +48,13 @@
           <div class="form-group">
             <label for="zone">Zone to search</label>
             <select class="form-control" id="zone">
-              <option>--Select--</option>
+              <!-- <option>--Select--</option> -->
               <option value="book">Book</option>
               <option value="map">Map</option>
-              <option value="picture">Picture</option>
+              <option value="newspaper">Newspaper</option>
             </select>
           </div>
         </fieldset>
-
-        <fieldset class="form-group">
-          <legend>Type of Search</legend>
-
-          <div class="form-group">
-            <label class="d-block">Are you serching for a book or a map?</label>
-
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input
-                  id="book"
-                  class="form-check-input"
-                  type="radio"
-                  name="search_type"
-                  value="book"
-                  checked
-                />
-                Book
-              </label>
-            </div>
-            <!-- form-check -->
-
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input
-                  id="map"
-                  class="form-check-input"
-                  type="radio"
-                  name="search_type"
-                  value="map"
-                />
-                Map
-              </label>
-            </div>
-            <!-- form-check -->
-          </div>
-          <!-- form-group -->
-        </fieldset>
-        <!-- fieldset -->
 
         <button class="btn btn-primary" type="submit" id="submitBtn">
           Submit
