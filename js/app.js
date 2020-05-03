@@ -8,9 +8,11 @@ function loadTrove (e) {
   const authToken = 'mda3k523k482n4rm';
   const query = document.getElementById('search_query').value;
   const zone = document.getElementById('zone').value;
+  const qty = document.getElementById('quantity').value;
   console.log(authToken);
   console.log(query);
   console.log(zone);
+  console.log(qty);
 
   // Build the URL
   let url = 'https://api.trove.nla.gov.au/v2/result?';
@@ -29,7 +31,7 @@ function loadTrove (e) {
     url += `&q=${query}`;
   }
   // Append number of resutls to url
-  url += `&n=10`;
+  url += `&n=${qty}`;
   console.log(url);
 
   axios
@@ -64,7 +66,7 @@ function loadTrove (e) {
                                 <h2 class="text-center card-title">${work.title}</h2>
                                 <h5 class="text-center card-title"><span class="text-muted">Author:</span> ${work.contributor[0]}</h5>
                                 <h5 class="text-center card-title"><span class="text-muted">Date Issued:</span> ${work.issued}</h5>
-                                <a href="${work.troveUrl}" target="_blank" class="btn btn-primary btn-block">Get Book</a>
+                                <a href="${work.troveUrl}" target="_blank" class="btn btn-primary btn-lg btn-block">See Full Details in Trove</a>
                             </div>
                         </div>
                     </div>
