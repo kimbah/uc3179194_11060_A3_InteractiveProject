@@ -12,3 +12,12 @@ body {
 h1, label, legend {
     color: white !important;
 }
+
+#quantity, #quantity_news, #zone {
+    width: 20%;
+}
+
+.btn-block {
+    width: 50% !important;
+    margin: 0 auto;
+}
