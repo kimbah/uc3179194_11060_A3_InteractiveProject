@@ -83,7 +83,7 @@ function loadTroveNews (e) {
   e.preventDefault();
 
   // Validate that query input field is not empty
-  let form = document.querySelector('.needs-validation');
+  let form = document.querySelector('.newspaper');
   if (form.checkValidity() === false) {
     form.classList.add('was-validated');
   }
