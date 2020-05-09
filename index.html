@@ -14,122 +14,158 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center mb-5">
-        Search Trove for a Book or Map
-      </h1>
+      <div class="container mt-3 text-white">
+        <div class="row">
+          <h1>Trove</h1>
+          <p class="mt-3">
+            Trove helps you find and use resources relating to Australia. It’s
+            more than a search engine. Trove brings together content from
+            libraries, museums, archives, repositories and other research and
+            collecting organisations big and small
+          </p>
+        </div>
+      </div>
+      <div class="container mt-5 text-white">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="container">
+              <h2 class="mb-5">
+                Search Trove for a Book or Map
+              </h2>
 
-      <form
-        action=""
-        class="main-form needs-validation"
-        id="trove_form"
-        novalidate
-      >
-        <fieldset class="form-group">
-          <legend>Search Query Details</legend>
+              <form
+                action=""
+                class="main-form needs-validation"
+                id="trove_form"
+                novalidate
+              >
+                <fieldset class="form-group">
+                  <legend>Search Query Details</legend>
 
-          <div class="form-group">
-            <label class="form-control-label sr-only" for="ownername"
-              >Search Query</label
-            >
-            <input
-              class="form-control form-control-lg"
-              type="text"
-              id="search_query"
-              placeholder="Your Search Query"
-              required
-            />
-            <div class="invalid-feedback">Please enter search query</div>
+                  <div class="form-group">
+                    <label class="form-control-label sr-only" for="ownername"
+                      >Search Query</label
+                    >
+                    <input
+                      class="form-control form-control-lg"
+                      type="text"
+                      id="search_query"
+                      placeholder="Your Search Query"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please enter search query
+                    </div>
+                  </div>
+                  <!-- form-group -->
+                </fieldset>
+                <!-- fieldset -->
+
+                <fieldset>
+                  <div class="form-group">
+                    <label for="zone">Search for Book or Map?</label>
+                    <select class="form-control form-control-lg w-25" id="zone">
+                      <!-- <option>--Select--</option> -->
+                      <option value="book">Book</option>
+                      <option value="map">Map</option>
+                    </select>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-group">
+                    <label class="form-control-label"
+                      >Number of results:
+                    </label>
+                    <input
+                      class="form-control form-control-lg w-25"
+                      type="number"
+                      id="quantity"
+                      min="5"
+                      max="30"
+                      value="10"
+                    />
+                  </div>
+                </fieldset>
+
+                <button
+                  class="btn btn-primary w-100"
+                  type="submit"
+                  id="submitBtn"
+                >
+                  Search for Book or Map
+                </button>
+              </form>
+            </div>
+            <!-- content container -->
           </div>
-          <!-- form-group -->
-        </fieldset>
-        <!-- fieldset -->
+          <div class="col-md-6">
+            <div class="container">
+              <h2 class="mb-5">
+                Search Trove for a Newspaper
+              </h2>
 
-        <fieldset>
-          <div class="form-group">
-            <label for="zone">Search for Book or Map?</label>
-            <select class="form-control form-control-lg" id="zone">
-              <!-- <option>--Select--</option> -->
-              <option value="book">Book</option>
-              <option value="map">Map</option>
-            </select>
+              <form
+                action=""
+                class="main-form needs-validation newspaper"
+                id="trove_form_news"
+                novalidate
+              >
+                <fieldset class="form-group">
+                  <legend>Search Query Details</legend>
+
+                  <div class="form-group">
+                    <label class="form-control-label sr-only" for="ownername"
+                      >Search Query</label
+                    >
+                    <input
+                      class="form-control form-control-lg"
+                      type="text"
+                      id="search_query_news"
+                      placeholder="Your Search Query"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please enter search query
+                    </div>
+                  </div>
+                  <!-- form-group -->
+                </fieldset>
+                <!-- fieldset -->
+
+                <fieldset>
+                  <div class="form-group">
+                    <label class="form-control-label"
+                      >Number of results:
+                    </label>
+                    <input
+                      class="form-control form-control-lg w-25"
+                      type="number"
+                      id="quantity_news"
+                      min="5"
+                      max="30"
+                      value="10"
+                    />
+                  </div>
+                </fieldset>
+
+                <button
+                  class="btn btn-primary w-100"
+                  type="submit"
+                  id="submitBtnNews"
+                >
+                  Search for Newspaper
+                </button>
+              </form>
+            </div>
+            <!-- content container -->
           </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="form-group">
-            <label class="form-control-label">Number of results: </label>
-            <input
-              class="form-control form-control-lg"
-              type="number"
-              id="quantity"
-              min="5"
-              max="30"
-              value="10"
-            />
-          </div>
-        </fieldset>
-
-        <button class="btn btn-primary" type="submit" id="submitBtn">
-          Search for Book or Map
-        </button>
-      </form>
+        </div>
+      </div>
+      <div class="container">
+        <div id="result" class="row mt-5"></div>
+      </div>
     </div>
-    <!-- content container -->
-
-    <div class="container">
-      <h1 class="text-center mb-5">
-        Search Trove for a Newspaper
-      </h1>
-
-      <form
-        action=""
-        class="main-form needs-validation newspaper"
-        id="trove_form_news"
-        novalidate
-      >
-        <fieldset class="form-group">
-          <legend>Search Query Details</legend>
-
-          <div class="form-group">
-            <label class="form-control-label sr-only" for="ownername"
-              >Search Query</label
-            >
-            <input
-              class="form-control form-control-lg"
-              type="text"
-              id="search_query_news"
-              placeholder="Your Search Query"
-              required
-            />
-            <div class="invalid-feedback">Please enter search query</div>
-          </div>
-          <!-- form-group -->
-        </fieldset>
-        <!-- fieldset -->
-
-        <fieldset>
-          <div class="form-group">
-            <label class="form-control-label">Number of results: </label>
-            <input
-              class="form-control form-control-lg"
-              type="number"
-              id="quantity_news"
-              min="5"
-              max="30"
-              value="10"
-            />
-          </div>
-        </fieldset>
-
-        <button class="btn btn-primary" type="submit" id="submitBtnNews">
-          Search for Newspaper
-        </button>
-      </form>
-    </div>
-    <!-- content container -->
-
-    <div id="result" class="row mt-5"></div>
-    <!-- <div id="result_news" class="row mt-5"></div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
     <script src="js/app.js"></script>
