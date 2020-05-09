@@ -117,8 +117,8 @@ function loadTroveNews (e) {
                         <div class="card-body">
                             <div class="card-text">
                                 <h2 class="text-center card-title">${work.title.value}</h2>
-                                <h4 class="text-center card-title">${work.date}</h4>
-                                <h4 class="text-center card-title">Page: ${work.page}</h4>
+                                <h4 class="text-center card-title"><span class="text-muted">Date: </span>${work.date}</h4>
+                                <h4 class="text-center card-title"><span class="text-muted">Page: </span>${work.page}</h4>
                                 <h6 class="text-center card-title">${work.snippet}</h6>
                                 <a href="${work.troveUrl}" target="_blank" class="btn btn-primary btn-block">Go to Newspaper</a>
                             </div>
